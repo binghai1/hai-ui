@@ -10,5 +10,8 @@
     "vue"
   ],
   "author": "leohai",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
