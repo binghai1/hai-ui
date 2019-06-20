@@ -1,3 +1,14 @@
+@keyframes spin-data-v-814c26 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.loading[data-v-814c26] {
+  animation: spin-data-v-814c26 1s infinite linear;
+}
 .h-button[data-v-814c26] {
   display: inline-flex;
   justify-content: center;

@@ -12420,6 +12420,7 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   // props: ['icon', 'iconPosition']
   props: {
@@ -12456,6 +12457,8 @@ exports.default = _default;
       class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj)
     },
     [
+      _c("h-icon", { staticClass: "loading", attrs: { name: "loading" } }),
+      _vm._v(" "),
       _vm.icon ? _c("h-icon", { attrs: { name: _vm.icon } }) : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
@@ -12609,7 +12612,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57869" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51848" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

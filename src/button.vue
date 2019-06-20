@@ -1,5 +1,6 @@
 <template>
-        <button class="h-button" :class="{[`icon-${iconPosition}`]: true}">
+    <button class="h-button" :class="{[`icon-${iconPosition}`]: true}">
+    <h-icon class="loading" name="loading"></h-icon>
     <h-icon v-if="icon" :name="icon"></h-icon>
     <div class="content">
       <slot></slot>
@@ -24,6 +25,13 @@
 </script>
 
 <style lang="scss" scoped>
+        @keyframes spin {
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+        .loading{
+            animation: spin 1s infinite linear
+        }
         .h-button{
             display: inline-flex;
             justify-content: center;
