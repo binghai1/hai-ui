@@ -12,6 +12,15 @@
   "author": "leohai",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "sass": "^1.21.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
   }
 }
