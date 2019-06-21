@@ -1,7 +1,7 @@
 <template>
-    <button class="h-button" :class="{[`icon-${iconPosition}`]: true}">
-    <h-icon class="loading" name="loading"></h-icon>
-    <h-icon v-if="icon" :name="icon"></h-icon>
+    <button class="h-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <h-icon class="loading" name="loading" v-if="loading"></h-icon>
+    <h-icon v-if="icon&&!loading" :name="icon"></h-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -19,6 +19,10 @@
         validator (value) {
           return value === 'left' || value === 'right'
         }
+      },
+      loading:{
+          type:Boolean,
+          default:false
       }
     }
   }

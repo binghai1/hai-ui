@@ -12433,6 +12433,10 @@ var _default = {
       validator: function validator(value) {
         return value === 'left' || value === 'right';
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   }
 };
@@ -12454,12 +12458,21 @@ exports.default = _default;
     "button",
     {
       staticClass: "h-button",
-      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj)
+      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj),
+      on: {
+        click: function($event) {
+          return _vm.$emit("click")
+        }
+      }
     },
     [
-      _c("h-icon", { staticClass: "loading", attrs: { name: "loading" } }),
+      _vm.loading
+        ? _c("h-icon", { staticClass: "loading", attrs: { name: "loading" } })
+        : _vm._e(),
       _vm._v(" "),
-      _vm.icon ? _c("h-icon", { attrs: { name: _vm.icon } }) : _vm._e(),
+      _vm.icon && !_vm.loading
+        ? _c("h-icon", { attrs: { name: _vm.icon } })
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
     ],
@@ -12582,7 +12595,12 @@ _vue.default.component('h-icon', _icon.default);
 
 console.log(_icon.default);
 new _vue.default({
-  el: '#app'
+  el: '#app',
+  data: function data() {
+    return {
+      loading: false
+    };
+  }
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./compoents/icon":"src/compoents/icon.vue"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -12612,7 +12630,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51848" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49427" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

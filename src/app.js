@@ -6,5 +6,10 @@ Vue.component('h-button',Button)
 Vue.component('h-icon',Hicon)
 console.log(Hicon)
 new Vue({
-        el:'#app'
+        el:'#app',
+        data(){
+                return {
+                        loading:false
+                }
+        }
 })
