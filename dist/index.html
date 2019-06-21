@@ -24,16 +24,21 @@
             --border-radius: 4px;
             --color: #333;
             --border-color: #999;
-            --border-color-hover: #666;
+            --border-color-hover: red;
         }</style>
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
 
 <body>
     <div id="app">
             <h-button icon="download" :loading="loading" icon-position="right" @click="loading=!loading">按钮</h-button>
+            <button-group>
+                <h-button icon="left" :loading="loading" icon-position="left" @click="loading=!loading">按钮</h-button>
+                <h-button :loading="loading">按钮</h-button>
+                <h-button icon="right" :loading="loading" icon-position="right">按钮</h-button>
+            </button-group>
     </div>
 </body>
 <script src="/app.a6a4d504.js"></script>
-<script src="//at.alicdn.com/t/font_1253243_11kk98wlbih.js"></script>
+<script src="//at.alicdn.com/t/font_1253243_0nyzid3x3eji.js"></script>
 
 </html>

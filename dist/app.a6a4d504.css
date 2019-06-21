@@ -45,6 +45,27 @@
 .h-button.icon-right > .content[data-v-814c26] {
   order: 1;
 }
+.wrapper[data-v-23806a] {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.wrapper .h-button[data-v-23806a] {
+  border-radius: 0;
+}
+.wrapper .h-button[data-v-23806a]:not(:first-child) {
+  margin-left: -1px;
+}
+.wrapper .h-button[data-v-23806a]:hover {
+  z-index: 1;
+}
+.wrapper .h-button[data-v-23806a]:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+.wrapper .h-button[data-v-23806a]:last-child {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
 .icon[data-v-80bf9c] {
   width: 1em;
   height: 1em;
