@@ -73,9 +73,9 @@ try{
         expect(spy).to.have.been.called()
       }
 }catch(e){
- window.error=[e]
+ window.errors=[e]
 }finally{
-        window.error.forEach(err => {
+        window.errors && window.errors.forEach(err => {
                   console.error(err.message)
         });
 }

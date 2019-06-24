@@ -9,7 +9,9 @@
 </template>
 
 <script>
+    import Icon from './compoents/icon'
      export default {
+    components:{'i-con':Icon},
     // props: ['icon', 'iconPosition']
     props: {
       icon: {type:String},
