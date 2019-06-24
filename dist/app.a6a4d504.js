@@ -23732,54 +23732,84 @@ new _vue.default({
 _chai.default.use(_chaiSpies.default);
 
 var expect = _chai.default.expect;
-{
-  var Constructor = _vue.default.extend(_button.default);
 
-  var vm = new Constructor({
-    propsData: {
-      icon: "settings"
-    }
+try {
+  {
+    var Constructor = _vue.default.extend(_button.default);
+
+    var vm = new Constructor({
+      propsData: {
+        icon: "settings"
+      }
+    });
+    vm.$mount();
+    var element = vm.$el.querySelector('use');
+    var href = element.getAttribute('xlink:href');
+    expect(href).to.eq('#i-settinga');
+    vm.$el.remove();
+    vm.$destroy();
+  }
+  {
+    var _Constructor = _vue.default.extend(_button.default);
+
+    var _vm = new _Constructor({
+      propsData: {
+        icon: "download"
+      }
+    });
+
+    _vm.$mount();
+
+    var _element = _vm.$el.querySelector('use');
+
+    var _href = _element.getAttribute('xlink:href');
+
+    expect(_href).to.eq('#i-se33');
+
+    _vm.$el.remove();
+
+    _vm.$destroy();
+  } // {       
+  //         let Constructor=Vue.extend(Button)
+  //         let  vm = new  Constructor({propsData:{
+  //                 icon:'download',
+  //                 iconPosition:'right'
+  //         }})
+  //         vm.$mount('div')
+  //         console.log(vm.$el)
+  //         let element=vm.$el.querySelector('svg')
+  //         let {order} = window.getComputedStyle(element)
+  //         expect(order).to.eq('2')
+  //    vm.$el.remove()
+  //    vm.$destroy()
+  // } 
+
+  {
+    // mock
+    var _Constructor2 = _vue.default.extend(_button.default);
+
+    var _vm2 = new _Constructor2({
+      propsData: {
+        icon: 'settings'
+      }
+    });
+
+    _vm2.$mount();
+
+    var spy = _chai.default.spy(function () {});
+
+    _vm2.$on('click', spy);
+
+    var button = _vm2.$el;
+    button.click();
+    expect(spy).to.have.been.called();
+  }
+} catch (e) {
+  window.error = [e];
+} finally {
+  window.error.forEach(function (err) {
+    console.error(err.message);
   });
-  vm.$mount();
-  var element = vm.$el.querySelector('use');
-  var href = element.getAttribute('xlink:href');
-  expect(href).to.eq('#i-settings');
-  vm.$el.remove();
-  vm.$destroy();
-} // {       
-//         let Constructor=Vue.extend(Button)
-//         let  vm = new  Constructor({propsData:{
-//                 icon:'download',
-//                 iconPosition:'right'
-//         }})
-//         vm.$mount('div')
-//         console.log(vm.$el)
-//         let element=vm.$el.querySelector('svg')
-//         let {order} = window.getComputedStyle(element)
-//         expect(order).to.eq('2')
-//    vm.$el.remove()
-//    vm.$destroy()
-// } 
-
-{
-  // mock
-  var _Constructor = _vue.default.extend(_button.default);
-
-  var _vm = new _Constructor({
-    propsData: {
-      icon: 'settings'
-    }
-  });
-
-  _vm.$mount();
-
-  var spy = _chai.default.spy(function () {});
-
-  _vm.$on('click', spy);
-
-  var button = _vm.$el;
-  button.click();
-  expect(spy).to.have.been.called();
 }
 },{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./buttonGroup.vue":"src/buttonGroup.vue","./compoents/icon":"src/compoents/icon.vue","chai":"node_modules/chai/index.js","chai-spies":"node_modules/chai-spies/chai-spies.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

@@ -19,14 +19,24 @@ import chai from 'chai'
 import spies from 'chai-spies'
 chai.use(spies)
 const expect = chai.expect
-
+try{
 {       
         let Constructor= Vue.extend(Button)
         let vm=new Constructor({propsData:{icon:"settings"}})
         vm.$mount()
         let element=vm.$el.querySelector('use')
         let href=element.getAttribute('xlink:href')
-        expect(href).to.eq('#i-settings')
+        expect(href).to.eq('#i-settinga')
+        vm.$el.remove()
+        vm.$destroy()
+}
+{       
+        let Constructor= Vue.extend(Button)
+        let vm=new Constructor({propsData:{icon:"download"}})
+        vm.$mount()
+        let element=vm.$el.querySelector('use')
+        let href=element.getAttribute('xlink:href')
+        expect(href).to.eq('#i-se33')
         vm.$el.remove()
         vm.$destroy()
 }
@@ -62,3 +72,10 @@ const expect = chai.expect
         button.click()
         expect(spy).to.have.been.called()
       }
+}catch(e){
+ window.error=[e]
+}finally{
+        window.error.forEach(err => {
+                  console.error(err.message)
+        });
+}
